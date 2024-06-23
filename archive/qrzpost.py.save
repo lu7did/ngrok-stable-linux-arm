@@ -1,0 +1,42 @@
+#!/usr/bin/python
+#*--------------------------------------------------------------------------------------------------*
+#* qrzpost.py
+#* Request actions from qrz.com thru the API
+#* mainly intended to implement an automated interface to upload QSL information
+#*--------------------------------------------------------------------------------------------------*
+
+import requests
+import dateutil
+from datetime import datetime
+import sys
+
+#*  Access credentials                               *
+#*---------------------------------------------------* 
+url = 'https://logbook.qrz.com/api'
+key = 'C598-ECF9-F0F7-881A'
+#*---------------------------------------------------*
+#* Process arguments and format the query to qrz.com *
+#*---------------------------------------------------*
+cmd = sys.argv[1]     # First argument is the command
+dateTimeObj = datetime.now()
+timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+i=2
+s=""
+
+while i < len(sys.argv):
+  s=s+str(sys.argv[i])
+  i=i+1
+#*---------------------------------------------------*
+#* Create post payload based on request              *
+#*-------------------------------------------------- *
+
+if cmd == "STATUS" :  # STATUS requires no further argument
+   payload = {'KEY' : key, 'ACTION' : cmd}
+else:
+   if cmd == "INSERT" : # INSERT requires and adif formatted string
+      payload = {'KEY': key, 'ACTION' : cmd, 'ADIF' : s}
+   else:
+      print(timestampStr+" Invalid request, ignored")
+      sys.exit()      
+x = requests.post(url, data = payload)
+print(timestampStr+' QRZ Response('+x.text+')')

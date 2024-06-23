@@ -1,0 +1,16 @@
+#!/bin/sh
+#*---- Retrieve execution environment
+CURR=$(pwd)
+PWD=$(dirname $0)
+chdir $PWD
+
+#*--- Now delete all files older than 7 days
+#find $1 -type f -mtime +7 -delete
+SITE=$(python getJason.py sitedata.json site)
+
+SOURCE="/var/lib/motion"
+TARGET="onedrive:$SITE/motion"
+echo "Syncing from $SOURCE to $TARGET" 2>&1 | logger -i -t "moveQueue"
+cd /home/pi
+rclone sync --config=/var/lib/motion/rclone.conf -L -v $SOURCE $TARGET 2>&1 | logger -i -t "moveQueue"
+cd $CURR

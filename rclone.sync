@@ -1,0 +1,21 @@
+#!/bin/sh
+#*----------------------------------------------------------------------------------------------------
+#* rclone.sync
+#*
+#* Sync folder with OneDrive
+#*----------------------------------------------------------------------------------------------------
+#*---- Retrieve execution environment
+CURR=$(pwd)
+PWD=$(dirname $0)
+chdir $PWD
+
+#*--- Now delete all files older than 7 days
+SITE=$(python getJason.py sitedata.json site)
+
+
+SOURCE="/home/pi/Downloads/ngrok-stable-linux-arm/$SITE"
+TARGET="onedrive:$SITE"
+
+rclone sync --config=/home/pi/.config/rclone/rclone.conf -v $SOURCE $TARGET
+
+cd $CURR

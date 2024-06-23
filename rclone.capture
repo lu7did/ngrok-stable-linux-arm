@@ -1,0 +1,20 @@
+#!/bin/sh
+#*----------------------------------------------------------------------------------------------------
+#* rclone.capture
+#*
+#* Sync folder with OneDrive
+#*----------------------------------------------------------------------------------------------------
+#*---- Retrieve execution environment
+CURR=$(pwd)
+PWD=$(dirname $0)
+chdir $PWD
+
+#*--- Now delete all files older than 7 days
+#find $1 -type f -mtime +7 -delete
+SITE=$(python getJason.py sitedata.json site)
+
+SOURCE="/var/lib/motion"
+TARGET="onedrive:$SITE/motion"
+cd /home/pi
+rclone sync --config=/home/pi/.config/rclone/rclone.conf -L -v $SOURCE $TARGET
+cd $CURR

@@ -1,0 +1,7 @@
+Processing Mixer Level set path(/home/pi/Downloads/ngrok-stable-linux-arm)
+Simple mixer control 'Mic',0
+  Capabilities: pvolume pvolume-joined cvolume cvolume-joined pswitch pswitch-joined cswitch cswitch-joined
+  Playback channels: Mono
+  Capture channels: Mono
+  Limits: Playback 0 - 14 Capture 0 - 30
+  Mono: Playback 5 [36%] [-4.50dB] [off] Capture 11 [37%] [4.50dB] [on]

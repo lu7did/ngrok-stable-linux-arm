@@ -1,0 +1,13 @@
+processLoTW: LoTW Upload file(/home/pi/Downloads/ngrok-stable-linux-arm/LoTW.adi) sáb jun  1 11:48:02 -03 2024 Result
+TQSL Version 2.4.3 [pkg-v2.4.3]
+Firmar usando Indicativos LU7DZ, Entidad DXCC ARGENTINA
+
+Intentando subir 36 QSOs
+/home/pi/Downloads/ngrok-stable-linux-arm/LoTW.adi: no se pudo subir - o bien su conexión de Internet no funciona o LoTW no está disponible.
+Por favor trate de subir el Log más tarde.
+Intentando subir 36 QSOs
+/home/pi/Downloads/ngrok-stable-linux-arm/LoTW.adi: no se pudo subir - o bien su conexión de Internet no funciona o LoTW no está disponible.
+Por favor trate de subir el Log más tarde.
+Estado Final: Falló la conexión al LoTW (11)
+Final Status: LoTW Connection Failed (11)
+processLoTW: LoTW Upload suspended because of ARRL issues

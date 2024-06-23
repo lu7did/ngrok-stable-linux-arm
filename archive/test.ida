@@ -1,0 +1,7 @@
+ADIF Export
+<adif_ver:5>3.1.1
+<created_timestamp:15>20220108 234130
+<programid:6>WSJT-X
+<programversion:5>2.3.0
+<eoh>
+<call:6>JA0EOK <gridsquare:0> <mode:3>FT8 <rst_sent:3>-06 <rst_rcvd:3>-20 <qso_date:8>20220108 <time_on:6>211800 <qso_date_off:8>20220108 <time_off:6>234130 <band:3>10m <freq:9>28.076331 <station_callsign:5>LU7DZ <my_gridsquare:6>GF11FX <comment:25>FT8  Sent: -06  Rcvd: -20 <eor>
