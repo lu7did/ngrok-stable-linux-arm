@@ -66,13 +66,27 @@ echo $STATUS | cut -f2 -d"="
 getDASD () {
 sudo df -k | grep "/dev/root" | awk '{ print $5 ; }' | cut -f1 -d"%"
 }
+#+-----------------------------------------------------------------------------
+#* Get link performance
+#*-----------------------------------------------------------------------------
+getLink () {
+
+SPEEDTEST="/home/pi/speedtest-cli"
+rm -r $SPEEDTEST/speedtest.tmp 2> /dev/null
+python $SPEEDTEST/speedtest.py 2>&1  > $SPEEDTEST/speedtest.tmp 
+
+DOWN=$(cat $SPEEDTEST/speedtest.tmp | grep "Download: " | cut -f2- -d" " )
+HOST=$(cat $SPEEDTEST/speedtest.tmp | grep "Hosted " | cut -f2- -d":" )
+echo "$DOWN-$HOST"
+}
+
 
 #*--------------------------------------------------------------------------
 #* putTelemetry 
 #* Gather telemetry and assemble an information frame with it, log at Syslog
 #*--------------------------------------------------------------------------
 
-STATE="T($(getTemp)°C) V($(getVolt)V) Clk($(getClock)MHz) St($(getStatus)) CPU($(getCPU)%) DASD($(getDASD)%)" 
+STATE="T($(getTemp)°C) V($(getVolt)V) Clk($(getClock)MHz) St($(getStatus)) CPU($(getCPU)%) DASD($(getDASD)%) LINK($(getLink))" 
 echo $STATE | logger -i -t "TLM"
 echo $STATE 
 

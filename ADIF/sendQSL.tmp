@@ -1,3 +1,7 @@
 "MYCALL","RADIO","DATE","TIME","FREQ","MODE","RST","EMAIL"
 "LU7DZ","IZ3ZLT","20240622","194027","10m","FT8","-18","iz3zlt@libero.it"
 "LU7DZ","JR1UFN","20240622","191912","10m","FT8","-14","jr1ufn@jarl.com"
+python: can't open file 'sendmail.py': [Errno 2] No such file or directory
+sendQSL: Sending QSL for Radio(F4FLF) QSO(20240622 162112) Band(10m) Mode(FT8) RST(-10)
+python: can't open file 'sendmail.py': [Errno 2] No such file or directory
+sendQSL: Sending QSL for Radio(JR1UFN) QSO(20240622 191912) Band(10m) Mode(FT8) RST(-14)
