@@ -1,6 +1,0 @@
-ADIF Export
-<adif_ver:5>3.1.1
-<created_timestamp:15>20220108 234130
-<programid:6>WSJT-X
-<programversion:5>2.3.0
-<eoh>

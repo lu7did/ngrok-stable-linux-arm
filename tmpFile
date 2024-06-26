@@ -1,8 +1,8 @@
-processQSL: Site(tucSPA) Call(LU7DZ) Node(LU7DZ @ tucSPA) Directory(/home/pi/Downloads/ngrok-stable-linux-arm/ADIF)
-processQSL: Uptime(2 days,  1 hours, 53 minutes)
-processQSL: Internet connectivity site (tucSPA) found ok mié jun 26 12:01:02 -03 2024
+processQSL: Site() Call() Node( @ ) Directory(/home/pi/Downloads/ngrok-stable-linux-arm/ADIF)
+processQSL: Uptime(2 days,  2 hours, 53 minutes)
+processQSL: Internet connectivity site () found ok mié jun 26 13:01:02 -03 2024
 processQSL: Telemetry data
-processQSL: T(57.4°C) V(0.86V) Clk(1500.345728MHz) St(0x0) CPU(8%) DASD(65%) LINK(Cannot retrieve speedtest configuration ERROR: HTTP Error 403: Forbidden -)
+processQSL: T(58.4°C) V(0.86V) Clk(1500.345728MHz) St(0x0) CPU(11%) DASD(65%) LINK(22.31 Mbit/s- 34.508 ms)
  
 processQSL: Copying (/home/pi/.local/share/WSJT-X/wsjtx_log.adi) into (/home/pi/Downloads/ngrok-stable-linux-arm/ADIF/wsjtx.new)
 processQSL: File (/home/pi/.local/share/WSJT-X/wsjtx.adi) empty, process terminated
